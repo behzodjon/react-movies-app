@@ -1,5 +1,5 @@
-import { Movie } from "./Movie";
 import PropTypes from "prop-types";
+import { MovieItem } from "../components/MovieItem";
 
 function Movies(props) {
   const { movies } = props;
@@ -14,7 +14,7 @@ function Movies(props) {
       </div>
       <div className="grid gap-2 mt-12 sm:grid-cols-2 lg:grid-cols-3">
         {movies?.length ? (
-          movies.map((movie) => <Movie key={movie.id} {...movie} />)
+          movies.map((movie) => <MovieItem key={movie.id} {...movie} />)
         ) : (
           <div className="flex justify-center">No data</div>
         )}

@@ -1,22 +1,27 @@
 import PropTypes from "prop-types";
 import defaultImage from "../assets/images/default.jpeg";
+import { NavLink } from "react-router-dom";
 
-function Movie(props) {
+function MovieItem(props) {
   const { image, title, id, titleType } = props;
 
-  Movie.propTypes = {
+  MovieItem.propTypes = {
     titleType: PropTypes.string,
     image: PropTypes.object,
     title: PropTypes.string,
     id: PropTypes.string,
   };
 
+  let start = id.indexOf("/title/") + 7;
+  let end = id.indexOf("/", start);
+  let movieId = id.substring(start, end);
+
   return (
     <article
       className="max-w-md mx-auto mt-4 duration-300 border rounded-md shadow-lg hover:shadow-sm"
       key={id}
     >
-      <a href="#">
+      <NavLink to={`movies/${movieId}`}>
         <figure className="w-full h-[30rem] ">
           <img
             src={image?.url || defaultImage}
@@ -29,9 +34,9 @@ function Movie(props) {
           <h3 className="text-xl text-gray-900">{title}</h3>
           <p className="mt-1 text-sm text-gray-400">{titleType}</p>
         </div>
-      </a>
+      </NavLink>
     </article>
   );
 }
 
-export { Movie };
+export { MovieItem };

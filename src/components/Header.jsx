@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [state, setState] = useState(false);
@@ -13,9 +14,9 @@ function Header() {
     <nav className="w-full bg-white border-b md:border-0 md:static">
       <div className="items-center max-w-screen-xl px-4 mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <a href="#">
+          <NavLink to="/">
             <img src="https://www.floatui.com/logo.svg" alt="Float UI logo" />
-          </a>
+          </NavLink>
           <div className="md:hidden">
             <button
               className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"

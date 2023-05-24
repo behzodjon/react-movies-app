@@ -1,9 +1,9 @@
 const commonOptions = {
     method: "GET",
     headers: {
-        "X-RapidAPI-Key": "b2b2908180msh35b599cd39ee2d2p1879e2jsna181619ea708",
-        "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
-    },
+        'X-RapidAPI-Key': '0be8c077b2msh6b4f85281bf71dfp178762jsned128a4c3abc',
+        'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+    }
 };
 
 export const fetchData = async (url) => {
